@@ -1,8 +1,28 @@
 # Projeto `PAC-MAN`
 
+# Estrutura de Arquivos e Pastas
+
+~~~
+├── README.md          <- apresentação do projeto
+│
+├── data               <- dados usados pelo jogo (se houver)
+│
+├── notebooks          <- Jupyter notebooks ou equivalentes
+│
+├── src                <- projeto em Java (preferencialmente projeto no Eclipse)
+│   │
+│   ├── src            <- arquivos-fonte do projeto (.java)
+│   │
+│   ├── bin            <- arquivos em bytecode (.class)
+│   │
+│   └── README.md      <- instruções básicas de instalação/execução
+│
+└── assets             <- mídias usadas no projeto
+~~~
+
+
 # Descrição Resumida do Projeto/Jogo
 
-> 
 # Equipe: Não Tem Como
 * `César Devens Grazioti` - `RA: 195641`
 * `Cícero Pizzol Libardi` - `RA: 168810`
