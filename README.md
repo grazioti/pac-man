@@ -43,46 +43,283 @@
 
 ## Diagrama Geral do Projeto
 
-> <Apresente um diagrama geral de organização da organização do seu sistema. O formato é livre. A escolha de um ou mais estilos arquiteturais será considerado um diferencial.>
+![Diagrama Geral de Componentes](assets/diagrama-arquitetura-geral.PNG)
+
 > <Faça uma breve descrição do diagrama.>
 ## Diagrama Geral de Componentes
 
-### Exemplo 1
-
-Este é o diagrama compondo componentes para análise:
-
-![Diagrama Analise](diagrama-componentes-analise.png)
-
-### Exemplo 2
-
-Este é um diagrama inicial do projeto de jogos:
-
-![Diagrama Jogos](diagrama-componentes-jogos.png)
-
-### Exemplo 3
-
-Este é outro diagrama de um projeto de vendas:
-
-![Diagrama Vendas](diagrama-componentes-vendas.png)
-
-Para cada componente será apresentado um documento conforme o modelo a seguir:
-
-## Componente `<Nome do Componente>`
+## Componente `Labirinto`
 
 > <Resumo do papel do componente e serviços que ele oferece.>
-![Componente](diagrama-componente.png)
+![Labirinto](assets/labirinto-componente.PNG)
 
 **Ficha Técnica**
 item | detalhamento
 ----- | -----
-Classe | `<caminho completo da classe com pacotes>` <br> Exemplo: `pt.c08componentes.s20catalog.s10ds.DataSetComponent`
-Autores | `<nome dos membros que criaram o componente>`
-Interfaces | `<listagem das interfaces do componente>`
+Classe | `src.Labirinto`
+Autores | `César Devens Grazioti` e `Cícero Pizzol Libardi`
+Interfaces | `IMontadorLabirinto`, `IConnectLabirinto`, `IAtualizaLabirinto`, `IMovimentoValido`
 
 ### Interfaces
 
 Interfaces associadas a esse componente:
 
-![Diagrama Interfaces](diagrama-interfaces.png)
+![Labirinto Interfaces](assets/labirinto-interfaces.PNG)
 
 Interface agregadora do componente em Java:
+
+~~~java
+public interface IDataSet extends ITableProducer, IDataSetProperties {
+}
+~~~
+
+## Detalhamento das Interfaces
+
+### Interface `IMontadorLabirinto`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `IAtualizaLabirinto`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `IMovimentoValido`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `ILabirintoPropriedades`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `ILabirinto`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+## Componente `Ator`
+
+> <Resumo do papel do componente e serviços que ele oferece.>
+![Ator](assets/ator-componente.PNG)
+
+**Ficha Técnica**
+item | detalhamento
+----- | -----
+Classe | `src.Ator`
+Autores | `César Devens Grazioti` e `Cícero Pizzol Libardi`
+Interfaces | `IAtualizaLabirinto`, `IConnectLabirinto`, `IPacman`, `IFantasma`, `IMontadorEstatico`, `IMontadorPacman`, `IMontadorFantasma`
+
+### Interfaces
+
+Interfaces associadas a esse componente:
+
+![Ator Interfaces](assets/ator-interfaces.PNG)
+
+Interface agregadora do componente em Java:
+
+~~~java
+public interface IDataSet extends ITableProducer, IDataSetProperties {
+}
+~~~
+
+## Detalhamento das Interfaces
+
+### Interface `IAtualizaLabirinto`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `IConnectLabirinto`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `IMontadorEstatico`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `IMontadorPacman`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `IMontadorFantasma`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `IPacman`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+### Interface `IFantasma`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+## Componente `Controle`
+
+> <Resumo do papel do componente e serviços que ele oferece.>
+![Controle](assets/controle-componente.PNG)
+
+**Ficha Técnica**
+item | detalhamento
+----- | -----
+Classe | `src.Controle`
+Autores | `César Devens Grazioti` e `Cícero Pizzol Libardi`
+Interfaces | `IPacman`, `IFantasma`, `IMontador`, `IAtualizaView`, `IMovimentoValido`
+
+### Interfaces
+
+Interfaces associadas a esse componente:
+
+![Controle Interfaces](assets/controle-interfaces.PNG)
+
+Interface agregadora do componente em Java:
+
+~~~java
+public interface IDataSet extends ITableProducer, IDataSetProperties {
+}
+~~~
+
+## Detalhamento das Interfaces
+
+### Interface `IRMontador`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+## Componente `Montador`
+
+> <Resumo do papel do componente e serviços que ele oferece.>
+![Montador](assets/montador-componente.PNG)
+
+**Ficha Técnica**
+item | detalhamento
+----- | -----
+Classe | `src.Montador`
+Autores | `César Devens Grazioti` e `Cícero Pizzol Libardi`
+Interfaces | `IMontadorEstatico`, `IMontadorPacman`, `IMontadorFantasma`, `IMontadorLabirinto`, `IMontador`
+
+### Interfaces
+
+Interfaces associadas a esse componente:
+
+![Montador Interfaces](montador-interfaces.png)
+
+Interface agregadora do componente em Java:
+
+~~~java
+public interface IDataSet extends ITableProducer, IDataSetProperties {
+}
+~~~
+
+## Detalhamento das Interfaces
+
+### Interface `IMontador`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
