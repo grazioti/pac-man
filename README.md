@@ -69,7 +69,7 @@ Interfaces associadas a esse componente:
 Interface agregadora do componente em Java:
 
 ~~~java
-public interface IDataSet extends ITableProducer, IDataSetProperties {
+public interface ILabirinto extends ILabirintoPropriedades, IAtualizaLabirinto, IMovimentoValido, IMontadorLabirinto{
 }
 ~~~
 
@@ -153,10 +153,22 @@ Interfaces associadas a esse componente:
 
 ![Ator Interfaces](assets/ator-interfaces.PNG)
 
-Interface agregadora do componente em Java:
+Interfaces agregadoras do componente em Java:
 
 ~~~java
-public interface IDataSet extends ITableProducer, IDataSetProperties {
+public interface IAtorEstatico extends IAtorPropriedades, IMontadorAtor{
+}
+~~~
+
+~~~java
+public interface IFantasma extends IAtorPropriedades, IMontadorFantasma{
+    public void moverAtor();
+}
+~~~
+
+~~~java
+public interface IPacman extends IAtorPropriedades, IMontadorPacman{
+    public void moverAtor();
 }
 ~~~
 
@@ -267,7 +279,8 @@ Interfaces associadas a esse componente:
 Interface agregadora do componente em Java:
 
 ~~~java
-public interface IDataSet extends ITableProducer, IDataSetProperties {
+public interface IControle extends IRMontador{
+    public void executaJogo();
 }
 ~~~
 
@@ -306,7 +319,8 @@ Interfaces associadas a esse componente:
 Interface agregadora do componente em Java:
 
 ~~~java
-public interface IDataSet extends ITableProducer, IDataSetProperties {
+public interface IMontador {
+    public void criaJogo(IControle controle);
 }
 ~~~
 
