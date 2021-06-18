@@ -301,7 +301,7 @@ Interfaces | `IMontadorEstatico`, `IMontadorPacman`, `IMontadorFantasma`, `IMont
 
 Interfaces associadas a esse componente:
 
-![Montador Interfaces](montador-interfaces.png)
+![Montador Interfaces](montador-interfaces.PNG)
 
 Interface agregadora do componente em Java:
 
