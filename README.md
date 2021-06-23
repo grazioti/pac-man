@@ -1,4 +1,4 @@
-# Projeto `PAC-MAN`
+# Projeto `POO-BEE Game`
 
 # Estrutura de Arquivos e Pastas
 
