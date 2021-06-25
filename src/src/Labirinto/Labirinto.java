@@ -4,8 +4,9 @@ import Ator.*;
 
 public class Labirinto implements ILabirinto{
     protected Sala[][] labirinto;
-    int linhas;
-    int colunas;
+    private int linhas;
+    private int colunas;
+    private int qtdPastilhas;
 
     public void montaLabirinto(int linhas, int colunas){
         labirinto = new Sala[linhas][colunas];
@@ -63,24 +64,30 @@ public class Labirinto implements ILabirinto{
                     matrizRetorno[i][j] = "W";
                     continue;
                 }
-                else if (labirinto[i][j].getPacman() != null){
-                    matrizRetorno[i][j] = "P";
-                    continue;
+                else if (labirinto[i][j].getPacman() != null) {
+                    if (labirinto[i][j].getPacman().estaBolado()){
+                        matrizRetorno[i][j] = "B";
+                        continue;
+                    }
+                    else {
+                        matrizRetorno[i][j] = "P";
+                        continue;
+                    }
                 }
                 else if (labirinto[i][j].getFantasma(0) != null){
-                    matrizRetorno[i][j] = "F";
+                    matrizRetorno[i][j] = "V";
                     continue;
                 }
                 else if (labirinto[i][j].getFantasma(1) != null){
-                    matrizRetorno[i][j] = "F";
+                    matrizRetorno[i][j] = "A";
                     continue;
                 }
                 else if (labirinto[i][j].getFantasma(2) != null){
-                    matrizRetorno[i][j] = "F";
+                    matrizRetorno[i][j] = "R";
                     continue;
                 }
                 else if (labirinto[i][j].getFantasma(3) != null){
-                    matrizRetorno[i][j] = "F";
+                    matrizRetorno[i][j] = "L";
                     continue;
                 }
                 else if (labirinto[i][j].getCereja() != null){
@@ -104,4 +111,65 @@ public class Labirinto implements ILabirinto{
         return matrizRetorno;
     }
 
+    public boolean ehMovimentoValido(int iFim, int jFim){
+        if ((iFim < this.linhas) && (iFim >= 0) && (jFim >= 0) && (jFim < this.colunas)) {
+            if (labirinto[iFim][jFim].getMuro() == null) {
+                return true;
+            }
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    public void setQtdPastilhas(int qtd_pastilhas){
+        this.qtdPastilhas = qtd_pastilhas;
+    }
+
+    public int getQtdPastilhas(){
+        return this.qtdPastilhas;
+    }
+
+    public void removerPacman(int i, int j){
+        labirinto[i][j].setPacman(null);
+    }
+
+    public void removerPastilha(int i, int j){
+        this.labirinto[i][j].setPastilha(false);
+        this.qtdPastilhas--;
+    }
+
+    public void removerFantasma(int i, int j, int idx){
+        labirinto[i][j].setFantasma(idx,null);
+    }
+
+    public void removerOuro(int i, int j){
+        labirinto[i][j].setOuro(null);
+    }
+
+    public void removerCereja(int i, int j){
+        labirinto[i][j].setCereja(null);
+    }
+
+    public boolean haCereja(int i, int j){
+        if (labirinto[i][j].getCereja() == null){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean haOuro(int i, int j){
+        if (labirinto[i][j].getOuro() == null){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean haMuro(int i, int j){
+        if (labirinto[i][j].getMuro() == null){
+            return false;
+        }
+        return true;
+    }
 }

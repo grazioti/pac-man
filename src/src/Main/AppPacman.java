@@ -1,10 +1,11 @@
 package Main;
 
 import Controle.*;
+import LabirintoView.PainelDificuldades;
 
 public class AppPacman {
     public static void main(String[] args){
-        IControle controle = new Controle();
-        controle.executaJogo();
+        PainelDificuldades dificuldades = new PainelDificuldades();
+        dificuldades.gerarJogo();
     }
 }

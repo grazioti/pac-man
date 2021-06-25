@@ -1,4 +1,4 @@
 package Ator;
 
-public interface IAtorEstatico extends IAtorPropriedades, IMontadorAtor{
+public interface IAtorEstatico extends IAtorPropriedades, IMontadorEstatico{
 }
