@@ -7,10 +7,9 @@ public class FimJogo extends JFrame {
 	private static final long serialVersionUID = 4615875135091864599L;
 	int score;
     boolean ganhou;
-    //public String DIRETORIO = FimJogo.class.getResource(".").getPath();
 
-    ImageIcon ursoGanhou = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "ursoganhou.png");
-    ImageIcon ursoPerdeu = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "ursoperdeu.png");
+    ImageIcon ursoGanhou = new ImageIcon("/./src/LabirintoView/" + "Imagens/"+ "ursoganhou.png");
+    ImageIcon ursoPerdeu = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "ursoperdeu.png");
 
     public FimJogo(int score, boolean ganhou){
         super();

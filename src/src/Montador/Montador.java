@@ -82,7 +82,7 @@ public class Montador implements IMontador{
     }
 
     public void readCSV() throws IOException{
-        String caminho = "/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/Montador/" + "Fases/" + "dificuldade" + dificuldade + ".csv";
+        String caminho = "./src/Montador/" + "Fases/" + "dificuldade" + dificuldade + ".csv";
 
         BufferedReader file = new BufferedReader(new FileReader(caminho));
         int qtdLinhas = 29 * 28;

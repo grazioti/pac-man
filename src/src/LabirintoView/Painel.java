@@ -7,7 +7,6 @@ public class Painel extends JFrame implements ILabirintoView {
     
 	private static final long serialVersionUID = -8073756609683577951L;
 
-	//public String DIRETORIO = Painel.class.getResource(".").getPath();
 
     JLabel[][] matrizPainel;
     JLabel pontuacao;
@@ -53,17 +52,17 @@ public class Painel extends JFrame implements ILabirintoView {
         matrizPainel = new JLabel[tabuleiro.length][tabuleiro[0].length];
 
 
-        abelhaazul = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "abelhaazul.png");
-        abelhapreta = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "abelhapreta.png");
-        abelharosa = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "abelharosa.png");
-        abelhavermelha = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "abelhavermelha.png");
-        flor = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "flor.png");
-        mel = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "mel.png");
-        muro = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "grama.jpg");
-        raquete = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "rede.png");
-        urso = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "urso.png");
-        imgVerde = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "fundoverde.png");
-        ursoBolado = new ImageIcon("/C:/Users/Cícero/Desktop/Github/poo-bee-game/POO-BEE-Game/bin/LabirintoView/" + "Imagens/"+ "ursobolado.png");
+        abelhaazul = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "abelhaazul.png");
+        abelhapreta = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "abelhapreta.png");
+        abelharosa = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "abelharosa.png");
+        abelhavermelha = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "abelhavermelha.png");
+        flor = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "flor.png");
+        mel = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "mel.png");
+        muro = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "grama.jpg");
+        raquete = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "rede.png");
+        urso = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "urso.png");
+        imgVerde = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "fundoverde.png");
+        ursoBolado = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "ursobolado.png");
 
         for (int i = 0; i < tabuleiro.length; i++){
             for (int j = 0; j < tabuleiro[i].length; j++){
