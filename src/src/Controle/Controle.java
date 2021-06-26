@@ -27,6 +27,8 @@ public class Controle implements IControle, ActionListener {
 
     boolean terminou = false;
 
+    // Método core do jogo, que executa a criação do tabuleiro, da interface gráfica e inicializa os listeners para
+    // que o jogo continue rodando.
     public void executaJogo(String dificuldade){
         IMontador montador = new Montador();
         montador.criaJogo(this, dificuldade);
@@ -92,10 +94,12 @@ public class Controle implements IControle, ActionListener {
         });
     }
 
+    // Verifica as condições pós movimentações dos fantasmas e do pacman, isso para ver se há algum parâmetro
+    // para ser atualizado.
     public void verificacoesPosMov(){
         if (coletouOuro){
             tempo -= 200;
-            temporizador.setDelay(tempo);
+            temporizador.setDelay(tempo); // setará o novo tempo de "tick" do timer, ou seja, fará os fantasmas se moverem mais rapidamente.
         }
 
         if (labirinto.getQtdPastilhas() == 0 && !terminou){
@@ -112,6 +116,8 @@ public class Controle implements IControle, ActionListener {
             new FimJogo(pacman.getScore(), false);
         }
 
+        // Verifica se o pacman e os fantasmas estão na mesma posição e se o pacman está bolado, assim, ele matará os
+        // fantasmas que estão nessa sala.
         else if (haColisao() && pacman.estaBolado()){
             for (int k = 0; k < 4; k++){
                 int iFantasma = -1;
@@ -146,6 +152,7 @@ public class Controle implements IControle, ActionListener {
         return retorno;
     }
 
+    // Performa a ação de movimentar os fantasmas a cada vez que o timer bate seu tempo definido.
     public void actionPerformed(ActionEvent e) {
         for (IFantasma fant: fantasmas){
             if (fant != null){

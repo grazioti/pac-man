@@ -34,6 +34,10 @@ public class Painel extends JFrame implements ILabirintoView {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
+    
+    // Inicializa o labirinto na interface gráfica, gerando os paineis e os JLabel que serão modificados a cada movimentação;
+    // Guarda na matriz matrizPainel uma matriz de JLabel para que o método atualizarLabirinto possa acessar os locais corretos
+    // na interface gráfica e possa atualizar a visualização. Também pega as imagens de ícones de cada um dos personagens do jogo.
     public void inicializarLabirinto(String[][] tabuleiro){
     	
     	try {
@@ -157,6 +161,8 @@ public class Painel extends JFrame implements ILabirintoView {
         setVisible(true);
     }
 
+    // Atualiza o labirinto a partir de uma matriz de strings, assim, esse método verificará o que há em cada
+    // posição da matriz de strings e atualizará na interface gráfica a situação atual do jogo.
     public void atualizarLabirinto(String[][] tabuleiro, int pontos){
         for (int i = 0; i < tabuleiro.length; i++){
             for (int j = 0; j < tabuleiro[i].length; j++){

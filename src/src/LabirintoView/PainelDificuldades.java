@@ -20,8 +20,9 @@ public class PainelDificuldades extends JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    // Gera um painel inicial com três botões, que fará com que passe para o objeto Controle tal dificuldade, para que o
+    // jogo seja construido com a dificuldade desejada.
     public void gerarJogo(){
-    	
     	
         controle = new Controle();
 

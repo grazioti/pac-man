@@ -8,6 +8,7 @@ public class Labirinto implements ILabirinto{
     private int colunas;
     private int qtdPastilhas;
 
+    // Monta o labirinto inicial, inicializando as salas dentro de cada posição ij da matriz.
     public void montaLabirinto(int linhas, int colunas){
         labirinto = new Sala[linhas][colunas];
         for (int i = 0; i < linhas; i++){
@@ -111,6 +112,8 @@ public class Labirinto implements ILabirinto{
         return matrizRetorno;
     }
 
+    // Verifica se o movimento que deseja-se realizar é válido, ou seja, se não há muro no local em que o ator deseja
+    // se movimentar.
     public boolean ehMovimentoValido(int iFim, int jFim){
         if ((iFim < this.linhas) && (iFim >= 0) && (jFim >= 0) && (jFim < this.colunas)) {
             if (labirinto[iFim][jFim].getMuro() == null) {

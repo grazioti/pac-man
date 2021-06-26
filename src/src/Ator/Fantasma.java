@@ -53,6 +53,8 @@ public class Fantasma implements IFantasma{
         this.labirinto = labirinto;
     }
 
+    // Gera o movimento do fantasma e movimenta ele. Caso haja a ultrapassagem do tamanho do tabuleiro,
+    // ele "atravessará" a fase e irá pra posição diametralmente oposta.
     public void moverAtor(int pacI, int pacJ){
         labirinto.removerFantasma(i, j, idx);
         this.gerarMovimento(pacI, pacJ);
@@ -69,6 +71,8 @@ public class Fantasma implements IFantasma{
         labirinto.connect(this, i, j, idx);
     }
 
+    // Gera o shiftI e shiftJ dos fantasmas, dependendo de qual fantasma ele seja, ou seja, qual sua
+    // posição no vetor de fantasmas.
     public void gerarMovimento(int pacI, int pacJ) {
         Random rand = new Random();
         int numAleatorio = 0;

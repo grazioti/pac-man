@@ -40,6 +40,10 @@ public class Pacman implements IPacman {
         return this.score;
     }
 
+    public boolean estaBolado(){
+        return bolado;
+    }
+    
     public void montaAtor(int i, int j, char caractere){
         this.setI(i);
         this.setJ(j);
@@ -52,6 +56,9 @@ public class Pacman implements IPacman {
         this.labirinto = labirinto;
     }
 
+    // Movimenta o pacman de acordo com o shiftI e shiftJ dados pela movimentação pelo teclado.
+    // Caso haja a tentativa de movimentação para "fora" do tabuleiro, ele atravessará o mapa
+    // para um ponto diametralmente oposto.
     public void moverAtor(int shiftI, int shiftJ){
         labirinto.removerPacman(i, j);
 
@@ -95,9 +102,4 @@ public class Pacman implements IPacman {
         }
         return false;
     }
-
-    public boolean estaBolado(){
-        return bolado;
-    }
-
 }

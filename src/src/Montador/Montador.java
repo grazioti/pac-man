@@ -20,6 +20,9 @@ public class Montador implements IMontador{
     String[][] tabuleiro;
     String dificuldade;
 
+    // Cria o jogo, lendo o CSV, montando o tabuleiro inicial, e conectando os objetos que o objeto Controle necessita.
+    // Ou seja, conecta o labirinto, o pacman e o vetor de fantasmas.
+    
     public void criaJogo(IControle controle, String dificuldade) {
         this.dificuldade = dificuldade;
         
@@ -88,6 +91,8 @@ public class Montador implements IMontador{
         controle.connect(fantasmas);
     }
 
+    
+    // Lê o csv com o DIRETORIO definido no método criaJogo, colocando na variável commands os valores lidos.
     public void readCSV() throws IOException{
 
         BufferedReader file = new BufferedReader(new InputStreamReader(DIRETORIO));
@@ -104,6 +109,8 @@ public class Montador implements IMontador{
         file.close();
     }
 
+    
+    // Pega a matriz commands gerada no método readCSV e transforma para a matriz inicial que o método criaJogo utilizará.
     public void montarTabuleiro(){
         tabuleiro = new String[29][28];
         int linha;

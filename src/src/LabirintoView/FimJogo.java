@@ -23,6 +23,9 @@ public class FimJogo extends JFrame {
         terminarJogo();
     }
 
+    // Finaliza o jogo, sendo esse método chamado pelo construtor. Ele mostrará na interface gráfica uma mensagem se venceu
+    // ou perdeu e mostrará os pontos na frente. Também mostra uma imagem abaixo do texto sobre vitória ou derrota, sendo essa
+    // imagem que depende do resultado final.
     public void terminarJogo(){
     	
         JPanel painel = new JPanel();
