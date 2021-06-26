@@ -1,12 +1,18 @@
 package LabirintoView;
 
 import javax.swing.*;
+
+import Montador.*;
+
 import java.awt.*;
+import java.net.URISyntaxException;
+import java.util.Objects;
 
 public class Painel extends JFrame implements ILabirintoView {
     
 	private static final long serialVersionUID = -8073756609683577951L;
 
+	public String DIRETORIO;
 
     JLabel[][] matrizPainel;
     JLabel pontuacao;
@@ -29,6 +35,14 @@ public class Painel extends JFrame implements ILabirintoView {
     }
 
     public void inicializarLabirinto(String[][] tabuleiro){
+    	
+    	try {
+            DIRETORIO = Objects.requireNonNull(Painel.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath() + "/";
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    	
+    	
         JPanel painelPrincipal = new JPanel();
         JPanel viewTabuleiro = new JPanel();
         JPanel viewPontos = new JPanel();
@@ -52,17 +66,17 @@ public class Painel extends JFrame implements ILabirintoView {
         matrizPainel = new JLabel[tabuleiro.length][tabuleiro[0].length];
 
 
-        abelhaazul = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "abelhaazul.png");
-        abelhapreta = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "abelhapreta.png");
-        abelharosa = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "abelharosa.png");
-        abelhavermelha = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "abelhavermelha.png");
-        flor = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "flor.png");
-        mel = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "mel.png");
-        muro = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "grama.jpg");
-        raquete = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "rede.png");
-        urso = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "urso.png");
-        imgVerde = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "fundoverde.png");
-        ursoBolado = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "ursobolado.png");
+        abelhaazul = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/abelhaazul.png")));
+        abelhapreta = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/abelhapreta.png")));
+        abelharosa = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/abelharosa.png")));
+        abelhavermelha = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/abelhavermelha.png")));
+        flor = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/flor.png")));
+        mel = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/mel.png")));
+        muro = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/grama.jpg")));
+        raquete = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/rede.png")));
+        urso = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/urso.png")));
+        imgVerde = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/fundoverde.png")));
+        ursoBolado = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/ursobolado.png")));
 
         for (int i = 0; i < tabuleiro.length; i++){
             for (int j = 0; j < tabuleiro[i].length; j++){

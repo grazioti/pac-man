@@ -2,14 +2,14 @@ package LabirintoView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URISyntaxException;
+import java.util.Objects;
 
 public class FimJogo extends JFrame {
 	private static final long serialVersionUID = 4615875135091864599L;
 	int score;
     boolean ganhou;
-
-    ImageIcon ursoGanhou = new ImageIcon("/./src/LabirintoView/" + "Imagens/"+ "ursoganhou.png");
-    ImageIcon ursoPerdeu = new ImageIcon("./src/LabirintoView/" + "Imagens/"+ "ursoperdeu.png");
+    String DIRETORIO;
 
     public FimJogo(int score, boolean ganhou){
         super();
@@ -24,10 +24,15 @@ public class FimJogo extends JFrame {
     }
 
     public void terminarJogo(){
+    	
         JPanel painel = new JPanel();
         JPanel painelTexto = new JPanel();
         JLabel fundo = new JLabel();
 
+        ImageIcon ursoGanhou = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/ursoganhou.png")));
+        ImageIcon ursoPerdeu = new ImageIcon(Objects.requireNonNull(FimJogo.class.getResource("/LabirintoView/Imagens/ursoperdeu.png")));
+        
+        
         painel.add(fundo);
 
         if (ganhou){

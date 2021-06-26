@@ -1,6 +1,7 @@
 package LabirintoView;
 
 import Controle.*;
+import Montador.Montador;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,6 +21,8 @@ public class PainelDificuldades extends JFrame {
     }
 
     public void gerarJogo(){
+    	
+    	
         controle = new Controle();
 
         JPanel painelFundo = new JPanel();
