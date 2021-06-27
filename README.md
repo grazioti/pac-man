@@ -351,3 +351,44 @@ public interface IMontador {
 Método | Objetivo
 -------| --------
 `<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+
+## Componente `LabirintoView`
+
+> <Resumo do papel do componente e serviços que ele oferece.>
+![Montador](assets/labirintoview-componente.PNG)
+
+**Ficha Técnica**
+item | detalhamento
+----- | -----
+Classe | `src.LabirintoView`
+Autores | `César Devens Grazioti` e `Cícero Pizzol Libardi`
+Interfaces | `ILabirintoView`
+
+### Interfaces
+
+Interfaces associadas a esse componente:
+
+![LabirintoView Interfaces](assets/labirintoview-interfaces.PNG)
+
+Interface agregadora do componente em Java:
+
+~~~java
+public interface ILabirintoView {
+    public void inicializarLabirinto(String[][] tabuleiro);
+    public void atualizarLabirinto(String[][] tabuleiro, int pontos);
+}
+~~~
+
+## Detalhamento das Interfaces
+
+### Interface `ILabirintoView`
+
+`<Resumo do papel da interface.>`
+
+~~~
+<Interface em Java.>
+~~~
+
+Método | Objetivo
+-------| --------
+`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
