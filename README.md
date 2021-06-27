@@ -64,7 +64,9 @@ Isto é: dada uma instrução de movimentação do usuário para o Pacman, o Con
 
 ## Componente `Labirinto`
 
-> <Resumo do papel do componente e serviços que ele oferece.>
+> Esse componente tem o papel de armazenar o tabuleiro do nosso jogo em sua clase Labirinto, que é representado por uma matriz de Salas, contendo também suas dimensões. O Labirinto também tem ciência da quantidade total de pastilhas no tabuleiro - atributo fundamental para saber se o jogador venceu o jogo - e, da existência dos Atores dados os índices correspondentes. Cada Sala é referenciada por indices i e j, equivalentes a linha e coluna no tabuleiro respectivamente, e nela pode haver uma referência para um dos Atores (Pacman, Fantasmas, Ouro, Cereja e Muro), se um ou mais deles estiverem contidos num mesmo espaço. Assim, para adicionar uma referência ou ver se ela é nula, basta acionar os métodos get e set da Sala. O mesmo é válido para as pastilhas, uma vez que ao longo da execução é necessário saber se o Pacman comeu a pastilha ou não.
+> O Labirinto é responsável por receber a intenção de movimento do Pacman enviada pelo jogador, retornar se esse movimento é valido e realizar as devidas alterações em seu estado, por exemplo, a captura de um ouro/cereja/pastilha e o movimento dos fantasmas/pacman.
+
 ![Labirinto](assets/labirinto-componente.PNG)
 
 **Ficha Técnica**
@@ -89,65 +91,88 @@ public interface ILabirinto extends ILabirintoPropriedades, IAtualizaLabirinto, 
 
 ## Detalhamento das Interfaces
 
+### Interface `ILabirintoPropriedades`
+
+`Fornece ferramentas para acessar e modificar estados do labirinto.`
+
+~~~java
+public interface ILabirintoPropriedades {
+    public void atualizaPastilha(int i, int j, boolean condicao);
+    public boolean haPastilha(int i, int j);
+    public boolean haCereja(int i, int j);
+    public boolean haOuro(int i, int j);
+    public boolean haMuro(int i, int j);
+    public String[][] labirintoToString();
+    public int getQtdPastilhas();
+    public void setQtdPastilhas(int qtd_pastilhas);
+    public void removerPastilha(int i, int j);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`atualizaPastilha` | `Retira ou Insere na posição ij do labirinto uma pastilha, dependendo da condição dada`
+`haPastilha` | `Retorna se há uma pastilha na posição ij do labirinto`
+`haCereja` | `Retorna se há uma cereja na posição ij do labirinto`
+`haOuro` | `Retorna se há um ouro na posição ij do labirinto`
+`haMuro` | `Retorna se há um muro na posição ij do labirinto`
+`labirintoToString` | `Retorna uma matriz de Strings do estado atual do tabuleiro, respeitando as prioridades de exibição`
+`getQtdPastilhas` | `Retorna a quantidade de pastilhas restantes no tabuleiro`
+`setQtdPastilhas` | `Define a quantidade de pastilhas existentes no tabuleiro`
+`removerPastilha` | `Altera o estado da pastilha na posição ij para falso e subtrai em 1 a quantidade total de pastilhas`
+
+
+### Interface `IAtualizaLabirinto`
+
+`Possui métodos que permitem a remoção de atores da posição ij do tabuleiro, com exceção do Muro.`
+
+~~~java
+public interface IAtualizaLabirinto {
+    public void removerPacman(int i, int j);
+    public void removerFantasma(int i, int j, int idx);
+    public void removerCereja(int i, int j);
+    public void removerOuro(int i, int j);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`removerPacman` | `Remove o Pacman da posição ij do tabuleiro`
+`removerFantasma` | `Remove o Fantasma de índice idx do vetor de fantasmas na posição ij do tabuleiro`
+`removerCereja` | `Remove a Cereja da posição ij do tabuleiro`
+`removerOuro` | `Remove o Ouro da posição ij do tabuleiro`
+
+### Interface `IMovimentoValido`
+
+`Possui um método para verificar se a intenção de movimento do Pacman ou do Fantasma é válida.`
+
+~~~java
+public interface IMovimentoValido {
+    public boolean ehMovimentoValido(int iFim, int jFim);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`ehMovimentoValido` | `Recebe os índices finais da intenção de movimento dos Atores Móveis no labirinto e retorna se tal movimento é válido ou não`
+
 ### Interface `IMontadorLabirinto`
 
 `<Resumo do papel da interface.>`
 
-~~~
-<Interface em Java.>
-~~~
-
-Método | Objetivo
--------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
-
-### Interface `IAtualizaLabirinto`
-
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
+~~~java
+public interface IMontadorLabirinto {
+    public void montaLabirinto(int linhas, int colunas);
+    public void connect(IAtorEstatico ator, int i, int j);
+    public void connect(IPacman ator, int i, int j);
+    public void connect(IFantasma ator, int i ,int j, int idx);
+}
 ~~~
 
 Método | Objetivo
 -------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
-
-### Interface `IMovimentoValido`
-
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
-~~~
-
-Método | Objetivo
--------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
-
-### Interface `ILabirintoPropriedades`
-
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
-~~~
-
-Método | Objetivo
--------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
-
-### Interface `ILabirinto`
-
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
-~~~
-
-Método | Objetivo
--------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+`montaLabirinto` | `Recebe um número inteiro de linhas e colunas e instancia um labirinto com tais dimensões`
+`connect` | `Conecta um Ator à posição ij do labirinto. Dependendo dos argumentos passados na chamada de função, será chamado um método connect diferente, uma vez que há sobrecarga`
 
 ## Componente `Ator`
 
