@@ -30,12 +30,19 @@
 # Vídeos do Projeto
 
 ## Vídeo da Prévia
-[![Vídeo da prévia](http://img.youtube.com/vi/5QCycCbuyVY/0.jpg)](https://youtu.be/5QCycCbuyVY)
+[![Vídeo da Prévia](http://img.youtube.com/vi/5QCycCbuyVY/0.jpg)](https://youtu.be/5QCycCbuyVY)
+
+
+## Vídeo do Jogo
+[![Vídeo do Jogo](http://img.youtube.com/vi/h94rXNB6hbA/0.jpg)](https://youtu.be/h94rXNB6hbA)
 
 # Slides do Projeto
 
 ## Slides da Prévia
 [Link dos slides da prévia](https://unicampbr-my.sharepoint.com/:p:/r/personal/c195641_m_unicamp_br/Documents/Pr%C3%A9via%20Pac-man%20-%20POO.pptx?d=wae4c790d8be24e2a91b3b25c6607d748&csf=1&web=1&e=FY9JLZ)
+
+## Slides da Apresentação Final
+`<Coloque um link para os slides da apresentação final do projeto.>`
 
 # Documentação dos Componentes
 
