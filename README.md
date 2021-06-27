@@ -44,6 +44,18 @@
 ## Slides da Apresentação Final
 `<Coloque um link para os slides da apresentação final do projeto.>`
 
+## Relatório de Evolução
+
+> <Relatório de evolução, descrevendo as evoluções do design do projeto, dificuldades enfrentadas, mudanças de rumo, melhorias e lições aprendidas. Referências aos diagramas e recortes de mudanças são bem-vindos.>
+
+# Destaques de Código
+
+> <Escolha trechos relevantes e/ou de destaque do seu código. Apresente um recorte (você pode usar reticências para remover partes menos importantes). Veja como foi usado o highlight de Java para o código.>
+
+~~~java
+// Recorte do seu código
+~~~
+
 # Documentação dos Componentes
 
 # Diagramas
