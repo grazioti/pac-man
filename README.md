@@ -50,10 +50,42 @@
 
 # Destaques de Código
 
-> <Escolha trechos relevantes e/ou de destaque do seu código. Apresente um recorte (você pode usar reticências para remover partes menos importantes). Veja como foi usado o highlight de Java para o código.>
+> O trecho de código abaixo faz a adição do KeyListener do teclado à janela principal do jogo, designando quais as ações que devem ser realizadas a depender da tecla clicada pelo usuário no teclado. Tal trecho é dado pelo princípio do Pattern Observer, em que um objeto fica observando alguma ação do teclado ou mouse para que realize algum processo.
 
 ~~~java
-// Recorte do seu código
+addKeyListener(janela);
+...
+public void addKeyListener(Painel janela){
+        janela.addKeyListener(new KeyListener() {
+            ...
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_UP){
+                    if (labirinto.ehMovimentoValido(pacman.getI() - 1, pacman.getJ())) {
+                        pacman.moverAtor(-1, 0);
+                        coletouOuro = pacman.verificarSala();
+                        labirintoString = labirinto.labirintoToString();
+                        janela.atualizarLabirinto(labirintoString, pacman.getScore());
+                    }
+                    ...
+                }
+~~~
+
+> Performa uma ação a cada batida do timer. Ou seja, o objeto controle é observador do Timer, sendo a cada batida uma chamada de movimentação dos fantasmas do jogo. Também implementa o Pattern Observer destacado anteriormente.
+
+~~~java
+temporizador = new Timer(tempo, this);
+temporizador.start();
+...
+public void actionPerformed(ActionEvent e) {
+        for (IFantasma fant: fantasmas){
+            if (fant != null){
+                fant.moverAtor(pacman.getI(), pacman.getJ());
+                verificacoesPosMov();
+                labirintoString = labirinto.labirintoToString();
+                janela.atualizarLabirinto(labirintoString, pacman.getScore());
+            }
+        }
+    }
 ~~~
 
 # Documentação dos Componentes
