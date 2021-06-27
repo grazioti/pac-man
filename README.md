@@ -33,8 +33,8 @@
 [![Vídeo da Prévia](http://img.youtube.com/vi/5QCycCbuyVY/0.jpg)](https://youtu.be/5QCycCbuyVY)
 
 
-## Vídeo da Demonstração do Jogo
-[![Vídeo da Demonstração do Jogo](http://img.youtube.com/vi/h94rXNB6hbA/0.jpg)](https://youtu.be/h94rXNB6hbA)
+## Vídeo do Jogo
+[![Vídeo do Jogo](http://img.youtube.com/vi/h94rXNB6hbA/0.jpg)](https://youtu.be/h94rXNB6hbA)
 
 # Slides do Projeto
 
