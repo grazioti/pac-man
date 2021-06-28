@@ -89,6 +89,12 @@ public void actionPerformed(ActionEvent e) {
     }
 ~~~
 
+# Conclusões e Trabalhos Futuros
+
+> Considerando que este é nosso primeiro projeto de porte médio/grande envolvendo Componentes, Eventos e Interface Gráfica e somando toda a bagagem adquirida ao longo do curso, seja por meio de conteúdos advindos das aulas virtuais, seja por conteúdos extraclasse, a equipe NTC avalia como "satisfatório" e resultado obtido pela produção do jogo e se sente muito realizada em ver o projeto funcionando nos moldes planejados. Isso, pois a grande maioria dos conceitos relacionados à Orientação a Objetos apresentados, como modularizações, relacionamente entre objetos, princípios do encapsulamento, herança, sobrecarga de métodos, componentes, arquiteturas, componentes gráficos, tratamento de exceções etc foram empregados com êxito ao longo do código. Além disso, nós percebemos o quão importante é a questão do planejamento e como a fragmentação do grande problema em pequenos blocos leva à conclusão do objetivo maior passando por menos dificuldades. Portanto, arquitetar o projeto foi um ponto super positivo e facilitou o fluxo de ideias durante a produção de código. Todavia, como o tempo para execução foi curto, buscamos cumprir os requisitos exigidos, mas sem se limitar a eles.
+
+> Para um futuro próximo, almejamos melhorar ainda mais esse projeto implementando algoritmos mais sofisticados de movimentação para cada fantasma. É de se pensar a criação de um ícone original para representar a logo do POO-BEE Game e também um espaço na tela inicial para o jogador digitar seu nickname, a fim de haver uma aproximação com o usuário. Ademais, podemos acrescentar um ícone animado do Urso ao se movimentar, como uma forma de proporcionar um maior dinamismo.
+
 # Documentação dos Componentes
 
 # Diagramas
