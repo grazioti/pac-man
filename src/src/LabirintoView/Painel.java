@@ -40,13 +40,6 @@ public class Painel extends JFrame implements ILabirintoView {
     // na interface gráfica e possa atualizar a visualização. Também pega as imagens de ícones de cada um dos personagens do jogo.
     public void inicializarLabirinto(String[][] tabuleiro){
     	
-    	try {
-            DIRETORIO = Objects.requireNonNull(Painel.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath() + "/";
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-    	
-    	
         JPanel painelPrincipal = new JPanel();
         JPanel viewTabuleiro = new JPanel();
         JPanel viewPontos = new JPanel();
