@@ -236,7 +236,8 @@ Método | Objetivo
 
 ## Componente `Ator`
 
-> <Resumo do papel do componente e serviços que ele oferece.>
+> <Resumo do papel do componente e serviços que ele oferece.
+
 ![Ator](assets/ator-componente.PNG)
 
 **Ficha Técnica**
@@ -255,107 +256,144 @@ Interfaces associadas a esse componente:
 Interfaces agregadoras do componente em Java:
 
 ~~~java
-public interface IAtorEstatico extends IAtorPropriedades, IMontadorAtor{
+public interface IAtorEstatico extends IAtorPropriedades, IMontadorEstatico{
 }
 ~~~
 
 ~~~java
-public interface IFantasma extends IAtorPropriedades, IMontadorFantasma{
-    public void moverAtor();
+public interface IFantasma extends IAtorPropriedades, IMontadorFantasma, IConnectLabirinto{
+    public void moverAtor(int pacI, int pacJ);
+    public void gerarMovimento(int pacI, int pacJ);
 }
 ~~~
 
 ~~~java
-public interface IPacman extends IAtorPropriedades, IMontadorPacman{
-    public void moverAtor();
+public interface IPacman extends IAtorPropriedades, IMontadorPacman, IConnectLabirinto{
+    public void moverAtor(int shiftI, int shiftJ);
+    public int getScore();
+    public boolean verificarSala();
+    public boolean estaBolado();
 }
 ~~~
 
 ## Detalhamento das Interfaces
 
-### Interface `IAtualizaLabirinto`
-
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
-~~~
-
-Método | Objetivo
--------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
-
-### Interface `IConnectLabirinto`
-
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
-~~~
-
-Método | Objetivo
--------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
-
 ### Interface `IMontadorEstatico`
 
-`<Resumo do papel da interface.>`
+`Monta os atores Muro, Cereja e Ouro.`
 
-~~~
-<Interface em Java.>
-~~~
-
-Método | Objetivo
--------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
-
-### Interface `IMontadorPacman`
-
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
+~~~java
+public interface IMontadorEstatico {
+    public void montaAtor(int i, int j, char caractere);
+}
 ~~~
 
 Método | Objetivo
 -------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+`montaAtor` | `Dada a posição ij do Ator no labirinto e seu caractere correspondente, atribuindo tais valores aos seus atributos`
+
+### Interface `IAtorPropriedades`
+
+`Dispõe dos métodos get e set dos atributos comuns à todos os Atores do jogo.`
+
+~~~java
+public interface IAtorPropriedades {
+    public int getI();
+    public int getJ();
+    public void setI(int i);
+    public void setJ(int j);
+    public char getChar();
+    public void setChar(char caractere);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`getI` | `Retorna o índice da linha a qual o ator está no labirinto`
+`getJ` | `Retorna o índice da coluna a qual o ator está no labirinto`
+`setI` | `Define o índice da linha a qual o ator está no labirinto`
+`setJ` | `Define o índice da coluna a qual o ator está no labirinto`
+`getChar` | `Retorna o caractere que representa o ator em nossa abstração`
+`setChar` | `Define o caractere que representa o ator em nossa abstração`
 
 ### Interface `IMontadorFantasma`
 
-`<Resumo do papel da interface.>`
+`Monta os Fantasmas e define seus atributos.`
 
-~~~
-<Interface em Java.>
+~~~java
+public interface IMontadorFantasma {
+    public void montaAtor(int i, int j, char caractere, int idx);
+}
 ~~~
 
 Método | Objetivo
 -------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+`montaAtor` | `Dada a posição ij, o índice no vetor de fantasmas e o caractere correspondente, atribui tais valores aos atributos do Fantasma`
+
+### Interface `IMontadorPacman`
+
+`Monta o Pacman e define seus atributos.`
+
+~~~java
+public interface IMontadorPacman {
+    public void montaAtor(int i, int j, char caractere);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`montaAtor` | `Dada a posição ij do Pacman no labirinto e seu caractere correspondente, atribui-se tais valores aos seus atributos`
+
+### Interface `IConnectLabirinto`
+
+`Conecta o labirinto aos atores que se movimentam.`
+
+~~~java
+public interface IConnectLabirinto {
+    public void connect(ILabirinto labirinto);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`connect` | `Faz com que os atores que se movimentam tenham uma referência ao labirinto`
+
 
 ### Interface `IPacman`
 
-`<Resumo do papel da interface.>`
+`Dispõe de propriedades comuns a todos os Atores e, também, adiciona métodos particulares a esse Ator.`
 
-~~~
-<Interface em Java.>
+~~~java
+public interface IPacman extends IAtorPropriedades, IMontadorPacman, IConnectLabirinto{
+    public void moverAtor(int shiftI, int shiftJ);
+    public int getScore();
+    public boolean verificarSala();
+    public boolean estaBolado();
+}
 ~~~
 
 Método | Objetivo
 -------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+`moverAtor` | `Dados os incrementos dos índices i e j do Pacman, movimenta este para a Sala desejada`
+`getScore` | `Retorna a pontuação atual do jogador`
+`verificarSala` | `Verifica quais elementos estão presentes na mesma Sala que o Pacman. Caso haja um Ouro, retornará true`
+`estaBolado` | `Retorna se o Pacman está bolado ou não, i.e, se ele capturou uma Cereja`
 
 ### Interface `IFantasma`
 
-`<Resumo do papel da interface.>`
+`Dispõe de propriedades comuns a todos os Atores e, também, adiciona métodos particulares a esse Ator.`
 
-~~~
-<Interface em Java.>
+~~~java
+public interface IFantasma extends IAtorPropriedades, IMontadorFantasma, IConnectLabirinto{
+    public void moverAtor(int pacI, int pacJ);
+    public void gerarMovimento(int pacI, int pacJ);
+}
 ~~~
 
 Método | Objetivo
 -------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+`moverAtor` | `Recebe as coordenadas atuais do Pacman no labirinto e movimenta os fantasmas, com base da resposta do método abaixo`
+`gerarMovimento` | `Decide com base na cor os incrementos dos índices i e j de cada Fantasma`
 
 ## Componente `Controle`
 
