@@ -397,7 +397,8 @@ Método | Objetivo
 
 ## Componente `Controle`
 
-> <Resumo do papel do componente e serviços que ele oferece.>
+> <Resumo do papel do componente e serviços que ele oferece.
+
 ![Controle](assets/controle-componente.PNG)
 
 **Ficha Técnica**
@@ -405,7 +406,7 @@ item | detalhamento
 ----- | -----
 Classe | `src.Controle`
 Autores | `César Devens Grazioti` e `Cícero Pizzol Libardi`
-Interfaces | `IPacman`, `IFantasma`, `IMontador`, `IAtualizaView`, `IMovimentoValido`
+Interfaces | `IPacman`, `IFantasma`, `IMontador`, `ILabirintoView`, `IMovimentoValido`
 
 ### Interfaces
 
@@ -417,7 +418,7 @@ Interface agregadora do componente em Java:
 
 ~~~java
 public interface IControle extends IRMontador{
-    public void executaJogo();
+    public void executaJogo(String dificuldade);
 }
 ~~~
 
@@ -425,19 +426,41 @@ public interface IControle extends IRMontador{
 
 ### Interface `IRMontador`
 
-`<Resumo do papel da interface.>`
+`Conectar os objetos criados no Montador ao objeto Controle.`
 
-~~~
-<Interface em Java.>
+~~~java
+public interface IRMontador {
+    public void connect(ILabirinto labirinto);
+    public void connect(IPacman pacman);
+    public void connect(IFantasma[] fantasmas);
+}
 ~~~
 
 Método | Objetivo
 -------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+`connect` | `Conecta o labirinto criado no Montador ao objeto Controle`
+`connect` | `Conecta o Pacman criado no Montador ao objeto Controle`
+`connect` | `Conecta os Fantasmas criados no Montador ao objeto Controle`
+
+
+### Interface `IControle`
+
+`Dispõe de métodos para controlar o jogo.`
+
+~~~java
+public interface IControle extends IRMontador{
+    public void executaJogo(String dificuldade);
+}
+~~~
+
+Método | Objetivo
+-------| --------
+`executaJogo` | `Dada a String da dificuldade selecionada pelo jogador, executa o controle do jogo`
 
 ## Componente `Montador`
 
-> <Resumo do papel do componente e serviços que ele oferece.>
+> <Resumo do papel do componente e serviços que ele oferece.
+
 ![Montador](assets/montador-componente.PNG)
 
 **Ficha Técnica**
@@ -453,31 +476,30 @@ Interfaces associadas a esse componente:
 
 ![Montador Interfaces](assets/montador-interfaces.PNG)
 
-Interface agregadora do componente em Java:
-
-~~~java
-public interface IMontador {
-    public void criaJogo(IControle controle);
-}
-~~~
-
 ## Detalhamento das Interfaces
 
 ### Interface `IMontador`
 
-`<Resumo do papel da interface.>`
+`Monta o jogo com base na dificuldade selecionada.`
 
-~~~
-<Interface em Java.>
+~~~java
+public interface IMontador {
+    public void criaJogo(IControle controle, String dificuldade);
+    public void readCSV() throws IOException;
+    public void montarTabuleiro();
+}
 ~~~
 
 Método | Objetivo
 -------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+`criaJogo` | `Com base na dificuldade selecionada cria o Labirinto e os Atores do jogo`
+`readCSV` | `Lê o arquivo que contém o mapa da dificuldade selecionada`
+`montarTabuleiro` | `Transforma a matriz retornada pelo readCSV em uma matriz de Strings`
 
 ## Componente `LabirintoView`
 
-> <Resumo do papel do componente e serviços que ele oferece.>
+> <Resumo do papel do componente e serviços que ele oferece.
+
 ![Montador](assets/labirintoview-componente.PNG)
 
 **Ficha Técnica**
@@ -493,7 +515,11 @@ Interfaces associadas a esse componente:
 
 ![LabirintoView Interfaces](assets/labirintoview-interfaces.PNG)
 
-Interface agregadora do componente em Java:
+## Detalhamento das Interfaces
+
+### Interface `ILabirintoView`
+
+`Exibir a interface visual do jogo.`
 
 ~~~java
 public interface ILabirintoView {
@@ -502,16 +528,7 @@ public interface ILabirintoView {
 }
 ~~~
 
-## Detalhamento das Interfaces
-
-### Interface `ILabirintoView`
-
-`<Resumo do papel da interface.>`
-
-~~~
-<Interface em Java.>
-~~~
-
 Método | Objetivo
 -------| --------
-`<id do método em Java>` | `<objetivo do método e descrição dos parâmetros>`
+`inicializarLabirinto` | `Inicializa a interface visual do Labirinto conforme a matriz de Strings fornecida`
+`atualizarLabirinto` | `Atualiza a interface visual do Labirinto conforme a matriz de Strings fornecida, bem como a quantidade atual de pontos do jogador`
