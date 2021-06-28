@@ -29,8 +29,8 @@ pastilhas do mapa e, assim, conseguir vencer. Durante o caminho, há fantasmas q
 específicos para tentar matar o pacman e fazer com que o jogador perca o jogo. No caso do jogo POO-BEE-Game,
 o jogador controla um urso, que tem o objetivo de pegar todos os potes de mel do cenário, fugindo das abelhas
 mutantes que tentam o matar. Há, também, elementos que modificam a dinâmica do jogo. Por exemplo, a flor, quando capturada pelo
-Urso, faz o jogador ganhar muitos pontos, por outro lado, leva as abelhas a se movimentarem mais rapidamente em direção ao Urso, devido
-ao cheiro exalado. Há, também, a raquete de matar insetos, que ao ser pega, faz com que o urso fique bolado e possa matar as abelhas
+Urso, faz o jogador ganhar muitos pontos, porém, leva as abelhas a se movimentarem mais rapidamente em direção ao Urso, devido
+ao cheiro exalado. Por outro lado, temos a raquete de matar insetos, que ao ser pega, faz com que o Urso fique bolado e possa matar as abelhas
 que estão tentando o atrapalhar em seu objetivo.
 
 > Para executar o jogo basta clonar o repositório do git e clicar no arquivo AppPOO-BEE-Game.jar e selecionar a dificuldade
