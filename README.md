@@ -159,7 +159,7 @@ public interface ILabirinto extends ILabirintoPropriedades, IAtualizaLabirinto, 
 
 ### Interface `ILabirintoPropriedades`
 
-`Fornece ferramentas para acessar e modificar estados do labirinto.`
+Fornece ferramentas para acessar e modificar estados do labirinto.
 
 ~~~java
 public interface ILabirintoPropriedades {
@@ -190,7 +190,7 @@ Método | Objetivo
 
 ### Interface `IAtualizaLabirinto`
 
-`Possui métodos que permitem a remoção de atores da posição ij do tabuleiro, com exceção do Muro.`
+Possui métodos que permitem a remoção de atores da posição ij do tabuleiro, com exceção do Muro.
 
 ~~~java
 public interface IAtualizaLabirinto {
@@ -210,7 +210,7 @@ Método | Objetivo
 
 ### Interface `IMovimentoValido`
 
-`Possui um método para verificar se a intenção de movimento do Pacman ou do Fantasma é válida.`
+Possui um método para verificar se a intenção de movimento do Pacman ou do Fantasma é válida.
 
 ~~~java
 public interface IMovimentoValido {
@@ -224,7 +224,7 @@ Método | Objetivo
 
 ### Interface `IMontadorLabirinto`
 
-`<Resumo do papel da interface.>`
+Tem o papel de instanciar o labirinto e conectar cada Sala instanciada ao seu Ator correspondente, isto é, a Sala passa a ter uma referência de seu(s) Ator(es).
 
 ~~~java
 public interface IMontadorLabirinto {
@@ -242,7 +242,7 @@ Método | Objetivo
 
 ## Componente `Ator`
 
-> <Resumo do papel do componente e serviços que ele oferece.
+> Este componente tem como objetivo agrupar todos os atores envolvidos no jogo, independente se ele se move no labirinto ou não. Todos eles dispõem de métodos get e set para acessar/modificar atributos em comum, como suas coordenadas no tabuleiro e seu caractere identificatório. No caso dos atores que não são estáticos, são eles Pacman e Fantasmas, há alguns contratos diferentes, uma vez que a movimentação desses personagens ao longo do tabuleiro não é semelhante. Em particular, eles possuem uma referência ao labirinto e interfaces intrínsecas com métodos que cuidam de seus movimentos. Além disso, é possível acessar por meio de atributos do Pacman a pontuação parcial do jogador, informações sobre a sala que o Pacman está ocupando e se este está bolado.
 
 ![Ator](assets/ator-componente.PNG)
 
@@ -286,7 +286,7 @@ public interface IPacman extends IAtorPropriedades, IMontadorPacman, IConnectLab
 
 ### Interface `IMontadorEstatico`
 
-`Monta os atores Muro, Cereja e Ouro.`
+Monta os atores Muro, Cereja e Ouro.
 
 ~~~java
 public interface IMontadorEstatico {
@@ -300,7 +300,7 @@ Método | Objetivo
 
 ### Interface `IAtorPropriedades`
 
-`Dispõe dos métodos get e set dos atributos comuns à todos os Atores do jogo.`
+Dispõe dos métodos get e set dos atributos comuns à todos os Atores do jogo.
 
 ~~~java
 public interface IAtorPropriedades {
@@ -324,7 +324,7 @@ Método | Objetivo
 
 ### Interface `IMontadorFantasma`
 
-`Monta os Fantasmas e define seus atributos.`
+Monta os Fantasmas e define seus atributos.
 
 ~~~java
 public interface IMontadorFantasma {
@@ -338,7 +338,7 @@ Método | Objetivo
 
 ### Interface `IMontadorPacman`
 
-`Monta o Pacman e define seus atributos.`
+Monta o Pacman e define seus atributos.
 
 ~~~java
 public interface IMontadorPacman {
@@ -352,7 +352,7 @@ Método | Objetivo
 
 ### Interface `IConnectLabirinto`
 
-`Conecta o labirinto aos atores que se movimentam.`
+Conecta o labirinto aos atores que se movimentam.
 
 ~~~java
 public interface IConnectLabirinto {
@@ -367,7 +367,7 @@ Método | Objetivo
 
 ### Interface `IPacman`
 
-`Dispõe de propriedades comuns a todos os Atores e, também, adiciona métodos particulares a esse Ator.`
+Dispõe de propriedades comuns a todos os Atores e, também, adiciona métodos particulares a esse Ator.
 
 ~~~java
 public interface IPacman extends IAtorPropriedades, IMontadorPacman, IConnectLabirinto{
@@ -387,7 +387,7 @@ Método | Objetivo
 
 ### Interface `IFantasma`
 
-`Dispõe de propriedades comuns a todos os Atores e, também, adiciona métodos particulares a esse Ator.`
+Dispõe de propriedades comuns a todos os Atores e, também, adiciona métodos particulares a esse Ator.
 
 ~~~java
 public interface IFantasma extends IAtorPropriedades, IMontadorFantasma, IConnectLabirinto{
@@ -403,7 +403,7 @@ Método | Objetivo
 
 ## Componente `Controle`
 
-> <Resumo do papel do componente e serviços que ele oferece.
+> Este componente é responsável pelo processo de execução da criação do labirinto e da interface gráfica. Por isso, ele possui uma referência ao labirinto e aos atores que se movem nele. Nele ocorre e inicialização dos listeners, que funcionam como observadores da ações realizadas pelo teclado, e movimentação do Pacman de acordo com o comando lido (se for válido). No caso dos Fantasmas, há um temporizador que permite a realização do movimento para uma outra Sala adjacente, assim que soa um tempo. O Controle também verifica as mudanças que aconteceram após os movimentos dos Fantasmas e do Pacman, como: existância de colisão, verificação do estado o Pacman, captura dos atributos/buff ao longo do mapa, dentre outros.
 
 ![Controle](assets/controle-componente.PNG)
 
@@ -432,7 +432,7 @@ public interface IControle extends IRMontador{
 
 ### Interface `IRMontador`
 
-`Conectar os objetos criados no Montador ao objeto Controle.`
+Conectar os objetos criados no Montador ao objeto Controle.
 
 ~~~java
 public interface IRMontador {
@@ -451,7 +451,7 @@ Método | Objetivo
 
 ### Interface `IControle`
 
-`Dispõe de métodos para controlar o jogo.`
+Dispõe de métodos para controlar o jogo.
 
 ~~~java
 public interface IControle extends IRMontador{
@@ -486,7 +486,7 @@ Interfaces associadas a esse componente:
 
 ### Interface `IMontador`
 
-`Monta o jogo com base na dificuldade selecionada.`
+Monta o jogo com base na dificuldade selecionada.
 
 ~~~java
 public interface IMontador {
@@ -525,7 +525,7 @@ Interfaces associadas a esse componente:
 
 ### Interface `ILabirintoView`
 
-`Exibir a interface visual do jogo.`
+Exibir a interface visual do jogo.
 
 ~~~java
 public interface ILabirintoView {
@@ -542,7 +542,7 @@ Método | Objetivo
 # Plano de Exceções
 
 ## Diagrama da hierarquia de exceções
-`Abaixo é mostrado o diagrama do plano de exceções.`
+Abaixo é mostrado o diagrama do plano de exceções.
 
 ![Plano de Exceções](assets/excecoes.PNG)
 
