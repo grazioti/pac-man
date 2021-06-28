@@ -465,7 +465,7 @@ Método | Objetivo
 
 ## Componente `Montador`
 
-> <Resumo do papel do componente e serviços que ele oferece.
+> Cabe a este componente criar o tabuleiro do jogo e seus atores, de acordo com a dificuldade escolhida pelo jogador. Para isso, há um método responsável pela leitura de um arquivo CSV contendo as coordenadas do Ator no labirinto e sua abstração em forma de caractere, dispostas linha a linha - colocando na variável commands os valores lidos. Para cada posição ij deste tabuleiro é instanciado um Ator e conectado na devida posição da matriz de Sala que representará o jogo. Por fim, o labirinto, o Pacman e os Fantasmas são conectados ao objeto Controle.
 
 ![Montador](assets/montador-componente.PNG)
 
@@ -504,7 +504,7 @@ Método | Objetivo
 
 ## Componente `LabirintoView`
 
-> <Resumo do papel do componente e serviços que ele oferece.
+> Esse componente é responsável por inicializar o labirinto na interface gráfica, gerando os paineis e os JLabel que serão modificados a cada movimentação. Em outras palavras, dada a movimentação de um Fantasma ou do Pacman é atualizada a matriz de Strings correspondente à matriz de Salas e é pedido ao LabirintoView que atualize a interface gráfica do jogo, i.e, a matriz de JLabel, onde cada célula corresponde a um ImageIcon.
 
 ![Montador](assets/labirintoview-componente.PNG)
 
