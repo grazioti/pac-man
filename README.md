@@ -58,7 +58,7 @@ dessa forma, pode-se rodar o jogo das três formas, sendo a mais indicada, a do 
 [Link dos slides da prévia](https://unicampbr-my.sharepoint.com/:p:/r/personal/c195641_m_unicamp_br/Documents/Pr%C3%A9via%20Pac-man%20-%20POO.pptx?d=wae4c790d8be24e2a91b3b25c6607d748&csf=1&web=1&e=FY9JLZ)
 
 ## Slides da Apresentação Final
-`<Coloque um link para os slides da apresentação final do projeto.>`
+[Link dos slides da apresentação final](https://docs.google.com/presentation/d/1TieULCng4RWGzUQP_PR5EOshnf6yBc9A12-thSbbd_k/edit#slide=id.ge25e0f6020_0_819)
 
 ## Relatório de Evolução
 
