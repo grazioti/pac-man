@@ -33,6 +33,12 @@ urso sente o seu cheiro e ganha muitos pontos, porém, faz as abelhas se movimen
 de matar insetos, que ao ser pega, faz com que o urso fique bolado e possa matar as abelhas que estão tentando o atrapalhar
 em seu objetivo.
 
+> Para executar o jogo basta clonar o repositório do git e clicar no arquivo AppPOO-BEE-Game.jar e selecionar a dificuldade
+que deseja jogar. Caso esse método não funcione, entre no caminho: poo-bee-game/src/bin e dentro dessa pasta bin abra o terminal
+que tenha o java instalado em sua máquina e digite o seguinte comando: `java Main.AppPacman`, dessa forma, pode-se escolher a 
+dificuldade e jogar o jogo. Há também a possibilidade de abrir o repositório no Eclipse, abrir o arquivo Main.java e rodar a aplicação,
+dessa forma, pode-se rodar o jogo das três formas, sendo a mais indicada, a do terminal, que é a mais certa de que não haverá erros.
+
 # Equipe: Não Tem Como
 * `César Devens Grazioti` - `RA: 195641`
 * `Cícero Pizzol Libardi` - `RA: 168810`
