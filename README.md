@@ -532,3 +532,16 @@ Método | Objetivo
 -------| --------
 `inicializarLabirinto` | `Inicializa a interface visual do Labirinto conforme a matriz de Strings fornecida`
 `atualizarLabirinto` | `Atualiza a interface visual do Labirinto conforme a matriz de Strings fornecida, bem como a quantidade atual de pontos do jogador`
+
+# Plano de Exceções
+
+## Diagrama da hierarquia de exceções
+`Abaixo é mostrado o diagrama do plano de exceções.`
+
+![Plano de Exceções](assets/excecoes.PNG)
+
+## Descrição das classes de exceção
+
+Classe | Descrição
+----- | -----
+IOException | Indica uma falha na leitura do arquivo CSV.
