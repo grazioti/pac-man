@@ -23,15 +23,15 @@
 
 # Descrição Resumida do Projeto/Jogo
 
-> O jogo POO-BEE-Game é baseado nos moldes do tradicional jogo conhecido como Pacman. Tal jogo consiste
+> O jogo POO-BEE-Game é baseado nos moldes do tradicional Pacman. Tal jogo consiste
 em um personagem que é controlado pelo teclado por um usuário, que tem o objetivo de capturar todas as
-pastilhas do mapa e, assim, conseguir vencer. Durante o caminho, tem fantasmas que fazem movimentos
-específicos para tentar matar o pacman, e, assim, fazer o jogador perder o jogo. No caso do jogo POO-BEE-Game,
+pastilhas do mapa e, assim, conseguir vencer. Durante o caminho, há fantasmas que fazem movimentos
+específicos para tentar matar o pacman e fazer com que o jogador perca o jogo. No caso do jogo POO-BEE-Game,
 o jogador controla um urso, que tem o objetivo de pegar todos os potes de mel do cenário, fugindo das abelhas
-mutantes que tentam o matar. Há, também, elementos que modificam a dinâmica do jogo, por exemplo, a flor, que o
-urso sente o seu cheiro e ganha muitos pontos, porém, faz as abelhas se movimentarem mais rapidamente, e há a raquete
-de matar insetos, que ao ser pega, faz com que o urso fique bolado e possa matar as abelhas que estão tentando o atrapalhar
-em seu objetivo.
+mutantes que tentam o matar. Há, também, elementos que modificam a dinâmica do jogo. Por exemplo, a flor, quando capturada pelo
+Urso, faz o jogador ganhar muitos pontos, por outro lado, leva as abelhas a se movimentarem mais rapidamente em direção ao Urso, devido
+ao cheiro exalado. Há, também, a raquete de matar insetos, que ao ser pega, faz com que o urso fique bolado e possa matar as abelhas
+que estão tentando o atrapalhar em seu objetivo.
 
 > Para executar o jogo basta clonar o repositório do git e clicar no arquivo AppPOO-BEE-Game.jar e selecionar a dificuldade
 que deseja jogar. Caso esse método não funcione, entre no caminho: poo-bee-game/src/bin e dentro dessa pasta bin abra o terminal
